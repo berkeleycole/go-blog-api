@@ -10,9 +10,10 @@ import (
 )
 
 func Routes(r *mux.Router, writings *writings.Service) {
+	r.HandleFunc("/writings", index(writings)).Methods("GET")
 	r.HandleFunc("/writings/{id}", show(writings)).Methods("GET")
 	r.HandleFunc("/writings", create(writings)).Methods("POST")
-	r.HandleFunc("/writings", index(writings)).Methods("GET")
+
 	// TODO - CRUD OPERATIONS
 }
 

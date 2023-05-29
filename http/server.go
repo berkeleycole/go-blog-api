@@ -28,7 +28,7 @@ func (s *Server) Start() error {
 
 	server := &http.Server{
 		Handler:      router,
-		Addr:         "0.0.0.0:8080",
+		Addr:         "0.0.0.0:80",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
