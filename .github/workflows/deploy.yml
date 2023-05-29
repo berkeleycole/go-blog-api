@@ -8,16 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Blog API
-      uses: appleboy/ssh-action@v0.1.2
-      with:
-        host: ${{secrets.SSH_HOST}}
-        key: ${{secrets.SSH_KEY}}
-        username: ${{secrets.SSH_USERNAME}}
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{secrets.SSH_USERNAME}}
 
-        script: | 
-          mkdir prod
-          cd prod
-          git clone git@github.com:berkeleycole/go-blog-api.git
-          echo 'Deploy to digital ocean was successful'
-
-
+          script: | 
+            mkdir prod
+            cd prod
+            git clone git@github.com:berkeleycole/go-blog-api.git
+            echo 'Deploy to digital ocean was successful'
